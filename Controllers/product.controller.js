@@ -95,7 +95,6 @@ const getCategories=asyncHandler(async(req,res)=>{
 
 const getProductsByCategory=asyncHandler(async(req,res)=>{
     const {categoryname}=req.query
-    console.log("the category name is ",categoryname)
     // now we will get the category id from this name
     const categoryId=await Category.findOne({name:{$regex:categoryname,$options:"i"}})
     if(!categoryId)
